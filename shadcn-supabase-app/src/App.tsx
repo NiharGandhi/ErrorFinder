@@ -14,7 +14,7 @@ function App() {
 
   const checkConnection = async () => {
     try {
-      const { data, error } = await supabase.from('_realtime_schema').select('*').limit(1)
+      const { error } = await supabase.from('_realtime_schema').select('*').limit(1)
       if (error) {
         console.log('Supabase connection error:', error.message)
         setConnected(false)
